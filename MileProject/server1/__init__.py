@@ -9,7 +9,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     numbers = requests.get("")
     letters = requests.get("")
 
-    username = numbers + letters
+    username = str(numbers.text) + letters.text
 
     if username:
         return func.HttpResponse(f"Username: {username}. This HTTP triggered function executed successfully.")
